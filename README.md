@@ -14,3 +14,7 @@
 ## Images and Gifs:
 
 ![Homepage Image](./assets/images/demo/homepage_ss.png)
+
+## Deployed Site
+
+GitHub Pages [URL]{https://marsb-dev.github.io/ai-se_project_flashcards/)
