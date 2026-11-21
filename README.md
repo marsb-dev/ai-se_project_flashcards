@@ -8,8 +8,13 @@
 ## Deployment and System Requirements: The user only needs a working computer with a browser and an internet connection.
 
 ## Features:
+* Decks
+* Flippable carousel
 
 ## Techonologies used:
+* Laptop
+* VS Code
+* ChatGPT Luna 6
 
 ## Images and Gifs:
 
