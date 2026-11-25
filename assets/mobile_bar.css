@@ -3,9 +3,17 @@
     justify-content: center;
   }
 
+  .page_type_index {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
   .page_type_index .page__main-content {
+    flex: 1;
     margin-left: -20px;
     margin-right: -20px;
+    margin-bottom: 0;
   }
 
   .gallery__title {
@@ -14,7 +22,6 @@
 
   #deck-view {
     justify-content: center;
-    --mobile-action-left: max(20px, calc(50% - 176.5px));
   }
 
   #deck-view .gallery__practice-btn,
@@ -22,20 +29,20 @@
     position: fixed;
     bottom: 27px;
     height: auto;
+    z-index: 2;
     padding: 12px 16px;
+    border-radius: 8px;
     font-size: 18px;
     line-height: 100%;
-    border-radius: 8px;
-    z-index: 2;
   }
 
   #deck-view .gallery__practice-btn {
-    right: var(--mobile-action-left);
+    right: max(20px, calc(50% - 176.5px));
     width: min(calc(50% - 26px), 170.5px);
   }
 
   #deck-view .gallery__new-card-btn {
-    left: var(--mobile-action-left);
+    left: max(20px, calc(50% - 176.5px));
     width: min(calc(50% - 26px), 170.5px);
   }
 
@@ -89,21 +96,20 @@
 
   .gallery__new-deck-btn {
     position: fixed;
-    padding: 12px 20px;
+    left: 0;
+    right: 0;
     bottom: 27px;
-    font-size: 18px;
-    line-height: 100%;
+    z-index: 2;
+    width: calc(100% - 40px);
+    max-width: 353px;
+    height: auto;
+    margin: 0 auto;
+    padding: 12px 20px;
     border-radius: 8px;
     background-color: #1a1a1a;
     color: #fff;
-    width: calc(100% - 40px);
-    max-width: 353px;
-    aspect-ratio: auto;
-    height: auto;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    z-index: 2;
+    font-size: 18px;
+    line-height: 100%;
   }
 
   .page {
@@ -116,16 +122,13 @@
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 1;
     height: 156px;
     background: linear-gradient(transparent, #ececec);
     pointer-events: none;
-    z-index: 1;
   }
 
-  .page_type_index:has(.page__main-content_location_carousel)::after {
-    display: none;
-  }
-
+  .page_type_index:has(.page__main-content_location_carousel)::after,
   .page_type_index:has(.not-found:not([hidden]))::after {
     display: none;
   }
@@ -149,20 +152,9 @@
     margin-top: auto;
   }
 
-  .page_type_index {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  .page_type_index .page__main-content {
-    flex: 1;
-    margin-bottom: 0;
-  }
-
   .page_type_index .footer {
-    margin-top: auto;
     position: relative;
     left: -20px;
+    margin-top: auto;
   }
 }
