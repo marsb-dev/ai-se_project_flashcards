@@ -28,8 +28,8 @@
       </nav>
     </header>
     <main class="page__main-content">
-      <h2 class="gallery__title">My Decks</h2>
       <section id="home" class="gallery">
+        <h2 class="gallery__title">My Decks</h2>
         <ul class="gallery__list">
           <template id="deck-template">
             <li class="card card_color_green">
@@ -49,6 +49,55 @@
             </li>
           </template>
         </ul>
+        <button class="gallery__new-deck-btn">+ New Deck</button>
+      </section>
+      <section id="deck-view" class="gallery">
+        <div class="gallery">
+          <h2 class="gallery__title"></h2>
+          <ul class="gallery__list">
+            <template id="deck-template">
+              <li class="card card_color_green">
+                <a class="card__link" href="#">
+                  <h3 class="card__title"></h3>
+                </a>
+                <div class="card__row">
+                  <p class="card__count"></p>
+                  <button
+                    type="button"
+                    class="deck__delete-btn"
+                    aria-label="Delete this deck"
+                  >
+                    <img src="assets/images/delete.svg" alt="trash can" />
+                  </button>
+                  <button
+                    type="button"
+                    class="deck__practice-btn"
+                    aria-label="Practice this deck"
+                  ></button>
+                </div>
+              </li>
+            </template>
+            <template id="card-template">
+              <li class="card card_color_green">
+                <div class="card__row">
+                  <button type="button" aria-label="not sure yet"></button>
+                  <button
+                    type="button"
+                    class="deck__delete-btn"
+                    aria-label="Delete this deck"
+                  >
+                    <img src="assets/images/delete.svg" alt="trash can" />
+                  </button>
+                  <button
+                    type="button"
+                    class="deck__practice-btn"
+                    aria-label="Practice this deck"
+                  ></button>
+                </div>
+              </li>
+            </template>
+          </ul>
+        </div>
         <button class="gallery__new-deck-btn">+ New Deck</button>
       </section>
       <section id="not-found" class="not-found" hidden>
