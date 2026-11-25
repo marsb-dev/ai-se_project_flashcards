@@ -126,6 +126,10 @@
     display: none;
   }
 
+  .page_type_index:has(.not-found:not([hidden]))::after {
+    display: none;
+  }
+
   .page_type_index:has(.page__main-content_location_carousel) {
     display: flex;
     flex-direction: column;
@@ -143,5 +147,22 @@
 
   .page_type_index:has(.page__main-content_location_carousel) .footer {
     margin-top: auto;
+  }
+
+  .page_type_index {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .page_type_index .page__main-content {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .page_type_index .footer {
+    margin-top: auto;
+    position: relative;
+    left: -20px;
   }
 }
