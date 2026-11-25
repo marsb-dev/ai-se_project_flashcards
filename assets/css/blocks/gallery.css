@@ -9,6 +9,8 @@
   font-weight: 700;
   font-size: 40px;
   margin: 0;
+  position: relative;
+  left: -20px;
 }
 
 .gallery_type_home > .gallery__title {
