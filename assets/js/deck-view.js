@@ -1,4 +1,5 @@
 import { hexToString, removeColorClasses } from "./colors.js";
+import { requestConfirmation } from "./modal.js";
 
 const deckView = document.querySelector("#deck-view");
 const homeDeckList = document.querySelector("#home .gallery__list");
@@ -33,19 +34,24 @@ function createFlashcardEl(card, deck) {
     );
   });
   deleteButton.addEventListener("click", () => {
-    const cardIndex = deck.cards.indexOf(card);
-    if (cardIndex !== -1) {
-      deck.cards.splice(cardIndex, 1);
-    }
-    cardEl.remove();
-    practiceButton.disabled = deck.cards.length === 0;
-    const homeDeckCard = [...homeDeckList.querySelectorAll(".card")].find(
-      (homeCard) => homeCard.dataset.deckId === deck.id,
+    requestConfirmation(
+      "Are you sure you want to delete this flashcard?",
+      () => {
+        const cardIndex = deck.cards.indexOf(card);
+        if (cardIndex !== -1) {
+          deck.cards.splice(cardIndex, 1);
+        }
+        cardEl.remove();
+        practiceButton.disabled = deck.cards.length === 0;
+        const homeDeckCard = [...homeDeckList.querySelectorAll(".card")].find(
+          (homeCard) => homeCard.dataset.deckId === deck.id,
+        );
+        if (homeDeckCard) {
+          homeDeckCard.querySelector(".card__count").textContent =
+            `${deck.cards.length} cards`;
+        }
+      },
     );
-    if (homeDeckCard) {
-      homeDeckCard.querySelector(".card__count").textContent =
-        `${deck.cards.length} cards`;
-    }
   });
 
   return cardEl;

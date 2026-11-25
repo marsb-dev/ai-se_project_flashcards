@@ -15,6 +15,9 @@
 
 .page_type_index .nav__links {
   width: inherit;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav__link {

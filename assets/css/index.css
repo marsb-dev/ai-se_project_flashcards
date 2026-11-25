@@ -7,3 +7,5 @@
 @import url("./blocks/not-found.css");
 @import url("./blocks/carousel.css");
 @import url("./blocks/footer.css");
+@import url("../mobile_bar.css");
+@import url("../modal.css");

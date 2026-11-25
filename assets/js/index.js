@@ -2,6 +2,7 @@ import { decks } from "./decks.js";
 import { hexToString, removeColorClasses } from "./colors.js";
 import { renderCarouselView } from "./carousel.js";
 import { renderDeckView } from "./deck-view.js";
+import { requestConfirmation } from "./modal.js";
 
 const homeView = document.querySelector("#home");
 const notFoundView = document.querySelector("#not-found");
@@ -27,7 +28,9 @@ function createDeckEl(item) {
     `${item.cards.length} cards`;
   const deleteButton = deckEl.querySelector(".card__delete-btn");
   deleteButton.addEventListener("click", () => {
-    deleteButton.closest(".card").remove();
+    requestConfirmation("Are you sure you want to delete this deck?", () => {
+      deleteButton.closest(".card").remove();
+    });
   });
   return deckEl;
 }
