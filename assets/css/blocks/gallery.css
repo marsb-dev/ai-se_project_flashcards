@@ -79,6 +79,14 @@
   color: #1a1a1a;
 }
 
+.gallery__new-card-btn > span {
+  opacity: 50%;
+}
+
+.gallery__new-card-btn:hover > span {
+  opacity: 100%;
+}
+
 .gallery[hidden] {
   display: none;
 }
