@@ -1,12 +1,20 @@
 import { decks } from "./decks.js";
 import { hexToString, removeColorClasses } from "./colors.js";
 import { renderCarouselView } from "./carousel.js";
+import { renderDeckView } from "./deck-view.js";
+
+const homeView = document.querySelector("#home");
+const notFoundView = document.querySelector("#not-found");
+const carouselView = document.querySelector("#carousel");
+const mainContent = document.querySelector(".page__main-content");
+const homeDeckList = homeView.querySelector(".gallery__list");
 
 function createDeckEl(item) {
   const deckEl = document
     .querySelector("#deck-template")
     .content.cloneNode(true);
   const deckCard = deckEl.querySelector(".card");
+  deckCard.dataset.deckId = item.id;
   const colorName = hexToString(item.color);
   removeColorClasses(deckCard);
   if (colorName) {
@@ -26,43 +34,55 @@ function createDeckEl(item) {
 
 function renderDeckEl(item) {
   const deckEl = createDeckEl(item);
-  const deckListEl = document.querySelector(".gallery__list");
-  deckListEl.prepend(deckEl);
+  homeDeckList.prepend(deckEl);
 }
 
-decks.forEach((element) => {
-  renderDeckEl(element);
-});
+function hideViews() {
+  homeView.hidden = true;
+  document.querySelector("#deck-view").hidden = true;
+  notFoundView.hidden = true;
+  carouselView.hidden = true;
+}
+
+decks.forEach(renderDeckEl);
 
 function renderViewFromHash() {
   const hash = window.location.hash.slice(1);
-  const decksView = document.querySelector("#home");
-  const notFoundView = document.querySelector("#not-found");
-  const carouselView = document.querySelector("#carousel");
-  const element = document.querySelector(".page__main-content");
+  const [deckId, action] = hash.split("/");
 
-  if (!hash || hash === "home") {
-    decksView.hidden = false;
-    notFoundView.hidden = true;
-    carouselView.hidden = true;
-    element.classList.remove("page__main-content_location_carousel");
+  if (!deckId || deckId === "home") {
+    hideViews();
+    homeView.hidden = false;
+    mainContent.classList.remove("page__main-content_location_carousel");
     return;
   }
 
-  const deck = decks.find((item) => item.id === hash);
-  if (deck) {
-    decksView.hidden = true;
-    notFoundView.hidden = true;
+  const deck = decks.find((item) => item.id === deckId);
+  if (deck && !action) {
+    hideViews();
+    document.querySelector("#deck-view").hidden = false;
+    mainContent.classList.remove("page__main-content_location_carousel");
+    renderDeckView(deck);
+    return;
+  }
+
+  if (deck && action === "practice") {
+    hideViews();
+    if (deck.cards.length === 0) {
+      document.querySelector("#deck-view").hidden = false;
+      mainContent.classList.remove("page__main-content_location_carousel");
+      renderDeckView(deck);
+      return;
+    }
     carouselView.hidden = false;
-    element.classList.add("page__main-content_location_carousel");
+    mainContent.classList.add("page__main-content_location_carousel");
     renderCarouselView(deck);
     return;
-  } else {
-    decksView.hidden = true;
-    carouselView.hidden = true;
-    notFoundView.hidden = false;
-    element.classList.remove("page__main-content_location_carousel");
   }
+
+  hideViews();
+  notFoundView.hidden = false;
+  mainContent.classList.remove("page__main-content_location_carousel");
 }
 
 window.addEventListener("hashchange", renderViewFromHash);

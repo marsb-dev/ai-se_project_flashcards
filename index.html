@@ -28,7 +28,7 @@
       </nav>
     </header>
     <main class="page__main-content">
-      <section id="home" class="gallery">
+      <section id="home" class="gallery gallery_type_home">
         <h2 class="gallery__title">My Decks</h2>
         <ul class="gallery__list">
           <template id="deck-template">
@@ -51,60 +51,39 @@
         </ul>
         <button class="gallery__new-deck-btn">+ New Deck</button>
       </section>
-      <section id="deck-view" class="gallery">
-        <div class="gallery">
+      <section id="deck-view" class="gallery" hidden>
+        <div class="gallery__header">
           <h2 class="gallery__title"></h2>
-          <ul class="gallery__list">
-            <template id="deck-template">
-              <li class="card card_color_green">
-                <a class="card__link" href="#">
-                  <h3 class="card__title"></h3>
-                </a>
-                <div class="card__row">
-                  <p class="card__count"></p>
-                  <button
-                    type="button"
-                    class="deck__delete-btn"
-                    aria-label="Delete this deck"
-                  >
-                    <img src="assets/images/delete.svg" alt="trash can" />
-                  </button>
-                  <button
-                    type="button"
-                    class="deck__practice-btn"
-                    aria-label="Practice this deck"
-                  ></button>
-                </div>
-              </li>
-            </template>
-            <template id="card-template">
-              <li class="card card_color_green">
-                <div class="card__row">
-                  <button type="button" aria-label="not sure yet"></button>
-                  <button
-                    type="button"
-                    class="deck__delete-btn"
-                    aria-label="Delete this deck"
-                  >
-                    <img src="assets/images/delete.svg" alt="trash can" />
-                  </button>
-                  <button
-                    type="button"
-                    class="deck__practice-btn"
-                    aria-label="Practice this deck"
-                  ></button>
-                </div>
-              </li>
-            </template>
-          </ul>
+          <button type="button" class="gallery__practice-btn">Practice</button>
         </div>
-        <button class="gallery__new-deck-btn">+ New Deck</button>
+        <ul class="gallery__list">
+          <template id="card-template">
+            <li class="card card_color_green">
+              <p class="card__text"></p>
+              <div class="card__row">
+                <button
+                  type="button"
+                  class="card__flip-btn"
+                  aria-label="Show answer"
+                ></button>
+                <button
+                  type="button"
+                  class="card__delete-btn"
+                  aria-label="Delete this card"
+                >
+                  <img src="assets/images/delete.svg" alt="" />
+                </button>
+              </div>
+            </li>
+          </template>
+        </ul>
+        <button type="button" class="gallery__new-card-btn">+ New Card</button>
       </section>
       <section id="not-found" class="not-found" hidden>
         <h2 class="not-found__status-code">404</h2>
         <p class="not-found__text">Sorry, nothing found!</p>
       </section>
-      <section id="carousel" class="carousel">
+      <section id="carousel" class="carousel" hidden>
         <h2 class="carousel__title">
           <span></span>
         </h2>
