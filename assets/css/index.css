@@ -2,8 +2,7 @@
 @import url("./blocks/page.css");
 @import url("./blocks/header.css");
 @import url("./blocks/nav.css");
-@import url("./blocks/decks.css");
-@import url("./blocks/deck.css");
+@import url("./blocks/gallery.css");
 @import url("./blocks/card.css");
 @import url("./blocks/not-found.css");
 @import url("./blocks/carousel.css");

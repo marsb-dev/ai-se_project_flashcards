@@ -6,27 +6,27 @@ function createDeckEl(item) {
   const deckEl = document
     .querySelector("#deck-template")
     .content.cloneNode(true);
-  const deckCard = deckEl.querySelector(".deck");
+  const deckCard = deckEl.querySelector(".card");
   const colorName = hexToString(item.color);
   removeColorClasses(deckCard);
   if (colorName) {
-    deckCard.classList.add(`deck_color_${colorName}`);
+    deckCard.classList.add(`card_color_${colorName}`);
   }
-  const deckLink = deckEl.querySelector(".deck__link");
+  const deckLink = deckEl.querySelector(".card__link");
   deckLink.href = `#${item.id}`;
-  deckEl.querySelector(".deck__title").textContent = item.name;
-  deckEl.querySelector(".deck__count").textContent =
+  deckEl.querySelector(".card__title").textContent = item.name;
+  deckEl.querySelector(".card__count").textContent =
     `${item.cards.length} cards`;
-  const deleteButton = deckEl.querySelector(".deck__delete-btn");
+  const deleteButton = deckEl.querySelector(".card__delete-btn");
   deleteButton.addEventListener("click", () => {
-    deleteButton.closest(".deck").remove();
+    deleteButton.closest(".card").remove();
   });
   return deckEl;
 }
 
 function renderDeckEl(item) {
   const deckEl = createDeckEl(item);
-  const deckListEl = document.querySelector(".decks__list");
+  const deckListEl = document.querySelector(".gallery__list");
   deckListEl.prepend(deckEl);
 }
 
