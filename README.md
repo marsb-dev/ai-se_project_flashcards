@@ -10,6 +10,9 @@
 ## Features:
 * Decks
 * Flippable carousel
+* Open deck view
+* Deck and card deletion confirmation pop-up
+* Responsive design for smaller screens (mobile and tablet)
 
 ## Techonologies used:
 * Laptop
