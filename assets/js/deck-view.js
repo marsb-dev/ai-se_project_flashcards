@@ -1,4 +1,4 @@
-import { hexToString, removeColorClasses } from "./colors.js";
+import { hexToString, removeColorClasses } from "./colorMap.js";
 import { requestConfirmation } from "./modal.js";
 
 const deckView = document.querySelector("#deck-view");

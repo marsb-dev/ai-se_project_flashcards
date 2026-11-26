@@ -1,11 +1,9 @@
 .footer {
-  margin-top: 300px;
-}
-
-.page_type_index .footer {
   font-weight: 400;
   font-size: 16px;
   letter-spacing: -0.16px;
   color: #00000080;
   margin-top: 500px;
+  padding: 20px 232px 20px 20px;
+  left: -20px;
 }

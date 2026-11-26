@@ -1,5 +1,5 @@
 import { decks } from "./decks.js";
-import { hexToString, removeColorClasses } from "./colors.js";
+import { hexToString, removeColorClasses } from "./colorMap.js";
 import { renderCarouselView } from "./carousel.js";
 import { renderDeckView } from "./deck-view.js";
 import { requestConfirmation } from "./modal.js";
