@@ -25,4 +25,6 @@
 
 ## Deployed Site
 
-GitHub Pages [URL]{https://marsb-dev.github.io/ai-se_project_flashcards/)
+GitHub Pages [Live project]{https://marsb-dev.github.io/ai-se_project_flashcards/)
+
+## Loom Project Pitch [URL](...)

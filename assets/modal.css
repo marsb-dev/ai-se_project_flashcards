@@ -48,7 +48,16 @@ div.modal.modal_visible {
   background-color: #e8e8e8;
 }
 
+.modal__btn_type_cancel:hover {
+  background-color: gray;
+}
+
 .modal__btn_type_confirm {
   background-color: #1a1a1a;
   color: #ffffff;
+}
+
+.modal__btn_type_confirm:hover {
+  background-color: gray;
+  color: #1a1a1a;
 }
