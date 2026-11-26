@@ -27,4 +27,4 @@
 
 GitHub Pages [Live project]{https://marsb-dev.github.io/ai-se_project_flashcards/)
 
-## Loom Project Pitch [URL](https://www.loom.com/share/ff47df953489433587e2fe5a4c595e56)
+## Loom Project Pitch [URL](https://drive.google.com/file/d/1ZQPoaBbGNQBjapsNEKuy4FRk5CD0pcEB/view?usp=sharing)
