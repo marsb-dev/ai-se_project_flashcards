@@ -43,6 +43,10 @@
   padding: 8px 12px;
 }
 
+.gallery__practice-btn:hover {
+  background-color: gray;
+}
+
 .gallery__practice-btn:not(:disabled):hover {
   background-image: linear-gradient(
     135deg,
