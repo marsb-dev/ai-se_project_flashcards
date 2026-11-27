@@ -33,12 +33,16 @@
     justify-content: center;
   }
 
+  #deck-view .card__delete-btn {
+    z-index: auto;
+  }
+
   #deck-view .gallery__practice-btn,
   #deck-view .gallery__new-card-btn {
     position: fixed;
-    bottom: 27px;
+    bottom: 52px;
     height: auto;
-    z-index: 2;
+    z-index: 3;
     padding: 12px 16px;
     border-radius: 8px;
     font-size: 18px;
@@ -107,8 +111,8 @@
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 27px;
-    z-index: 2;
+    bottom: 52px;
+    z-index: 3;
     width: calc(100% - 40px);
     max-width: 353px;
     height: auto;
@@ -129,11 +133,11 @@
     content: "";
     position: fixed;
     bottom: 0;
-    left: 0;
-    right: 0;
+    left: max(20px, calc(50% - 176.5px));
+    right: max(20px, calc(50% - 176.5px));
     z-index: 1;
-    height: 156px;
-    background: linear-gradient(transparent, #ececec);
+    height: 208px;
+    background: linear-gradient(transparent 0%, #ececec 50%, #ececec 100%);
     pointer-events: none;
   }
 
@@ -161,9 +165,18 @@
     margin-top: auto;
   }
 
-  .page_type_index .footer {
-    position: relative;
-    left: -20px;
-    margin-top: auto;
+  .page_type_index:not(:has(.page__main-content_location_carousel)) .footer {
+    position: fixed;
+    right: 20px;
+    bottom: 8px;
+    left: 20px;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page_type_index:not(:has(.page__main-content_location_carousel))
+    .footer__text {
+    margin: 0;
   }
 }
