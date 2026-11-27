@@ -3,9 +3,15 @@
     font-size: 20px;
   }
 
+  .header {
+    padding-bottom: 22px;
+  }
+
   .card {
-    max-width: 325px;
+    max-width: 353px;
     width: 100%;
+    max-height: 205px;
+    height: 100%;
   }
 
   .nav__links {
@@ -36,6 +42,10 @@
 
   #deck-view {
     justify-content: center;
+  }
+
+  .gallery_type_home .card__delete-btn {
+    z-index: 1;
   }
 
   #deck-view .card__delete-btn {
