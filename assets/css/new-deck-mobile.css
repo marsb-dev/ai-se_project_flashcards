@@ -1,0 +1,14 @@
+@media (max-width: 805px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__title {
+    font-size: 20px;
+  }
+
+  .nav__links {
+    font-size: 16px;
+  }
+}

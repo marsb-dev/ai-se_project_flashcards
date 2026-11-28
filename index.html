@@ -135,7 +135,7 @@
             <legend class="new-deck-view__legend">Pick the deck color</legend>
             <label class="new-deck-view__color-label" for="green">
               <input
-                class="new-deck-view__color-input new-deck-view__color-input_color_blue"
+                class="new-deck-view__color-input new-deck-view__color-input_color_green"
                 aria-label="Green"
                 name="color"
                 id="green"
@@ -195,10 +195,18 @@
               />
             </label>
           </fieldset>
-          <label class="new-deck-view__deck-input" for="new-deck">
-            <textarea> </textarea>
+          <label class="new-deck-view__deck-input" for="new-deck"
+            >Write the JSON array of cards so that it matches this schema
+            <textarea></textarea>
           </label>
-          <button type="submit" aria-label="submit" disabled>Submit</button>
+          <button
+            type="submit"
+            class="new-deck-submit-btn"
+            aria-label="submit"
+            disabled
+          >
+            Create the Deck
+          </button>
         </form>
       </section>
     </main>
