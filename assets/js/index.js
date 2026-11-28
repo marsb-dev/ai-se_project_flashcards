@@ -7,6 +7,7 @@ import { requestConfirmation } from "./modal.js";
 const homeView = document.querySelector("#home");
 const notFoundView = document.querySelector("#not-found");
 const carouselView = document.querySelector("#carousel");
+const newDeckView = document.querySelector("#new-deck-view");
 const mainContent = document.querySelector(".page__main-content");
 const homeDeckList = homeView.querySelector(".gallery__list");
 
