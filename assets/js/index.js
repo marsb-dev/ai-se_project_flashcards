@@ -46,17 +46,25 @@ function hideViews() {
   document.querySelector("#deck-view").hidden = true;
   notFoundView.hidden = true;
   carouselView.hidden = true;
+  newDeckView.hidden = true;
 }
 
 decks.forEach(renderDeckEl);
 
-function renderViewFromHash() {
+function router() {
   const hash = window.location.hash.slice(1);
   const [deckId, action] = hash.split("/");
 
   if (!deckId || deckId === "home") {
     hideViews();
     homeView.hidden = false;
+    mainContent.classList.remove("page__main-content_location_carousel");
+    return;
+  }
+
+  if (hash === "new-deck") {
+    hideViews();
+    newDeckView.hidden = false;
     mainContent.classList.remove("page__main-content_location_carousel");
     return;
   }
@@ -89,5 +97,11 @@ function renderViewFromHash() {
   mainContent.classList.remove("page__main-content_location_carousel");
 }
 
-window.addEventListener("hashchange", renderViewFromHash);
-renderViewFromHash();
+document
+  .querySelector("#home .gallery__new-deck-btn")
+  .addEventListener("click", () => {
+    window.location.hash = "new-deck";
+  });
+
+window.addEventListener("hashchange", router);
+router();
