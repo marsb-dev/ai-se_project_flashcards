@@ -1,20 +1,28 @@
 @media (max-width: 805px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .header__title {
     font-size: 20px;
   }
 
-  .header {
-    padding-bottom: 22px;
+  .nav__links {
+    font-size: 16px;
+  }
+
+  .gallery__title {
+    font-size: 32px;
   }
 
   .card {
-    max-width: 353px;
-    width: 100%;
-    height: 205px;
+    width: min(325px, 100%);
   }
 
-  .nav__links {
-    font-size: 16px;
+  .carousel__card {
+    max-width: 353px;
+    width: 100%;
   }
 
   .gallery_type_home {
@@ -27,34 +35,19 @@
     min-height: 100vh;
   }
 
-  .page_type_index .page__main-content {
-    flex: 1;
-    margin-left: -20px;
-    margin-right: -20px;
-    margin-bottom: 0;
-  }
-
   .gallery__title {
     left: 0;
-    font-size: 32px;
   }
 
   #deck-view {
     justify-content: center;
   }
 
-  .gallery_type_home .card__delete-btn {
-    z-index: 1;
-  }
-
-  #deck-view .card__delete-btn {
-    z-index: auto;
-  }
-
   #deck-view .gallery__practice-btn,
   #deck-view .gallery__new-card-btn {
+    justify-content: center;
     position: fixed;
-    bottom: 52px;
+    bottom: 75px;
     height: auto;
     z-index: 3;
     padding: 12px 16px;
@@ -85,7 +78,8 @@
       "card card card"
       "left flip right";
     gap: 20px;
-    align-items: center;
+    align-content: center;
+    justify-content: center;
   }
 
   #carousel .carousel__title {
@@ -102,7 +96,6 @@
     grid-area: card;
     width: 100%;
     max-width: 440px;
-    min-width: 0;
     justify-self: center;
   }
 
@@ -122,10 +115,11 @@
   }
 
   .gallery__new-deck-btn {
+    justify-content: center;
     position: fixed;
     left: 0;
     right: 0;
-    bottom: 52px;
+    bottom: 75px;
     z-index: 3;
     width: calc(100% - 40px);
     max-width: 353px;
@@ -140,19 +134,20 @@
   }
 
   .page {
-    padding-bottom: 100px;
+    padding: 20px;
   }
 
   .page::after {
     content: "";
     position: fixed;
     bottom: 0;
-    left: max(20px, calc(50% - 176.5px));
-    right: max(20px, calc(50% - 176.5px));
-    z-index: 1;
-    height: 208px;
-    background: linear-gradient(transparent 0%, #ececec 50%, #ececec 100%);
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 156px;
     pointer-events: none;
+    background-color: #ececec;
+    background: linear-gradient(transparent, 10%, #ececec);
   }
 
   .page_type_index:has(.page__main-content_location_carousel)::after,
@@ -172,25 +167,19 @@
     flex: 1;
     justify-content: center;
     align-items: center;
-    margin: 30px -20px 0;
   }
 
-  .page_type_index:has(.page__main-content_location_carousel) .footer {
+  .page_type_index:has(.page__main-content_location_carousel) {
     margin-top: auto;
   }
 
-  .page_type_index:not(:has(.page__main-content_location_carousel)) .footer {
+  .page_type_index .footer {
     position: fixed;
-    right: 20px;
-    bottom: 8px;
-    left: 20px;
-    z-index: 2;
-    margin: 0;
-    padding: 0;
+    bottom: 23px;
+    z-index: 4;
   }
 
-  .page_type_index:not(:has(.page__main-content_location_carousel))
-    .footer__text {
-    margin: 0;
+  .footer {
+    color: #1a1a1a80;
   }
 }

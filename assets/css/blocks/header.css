@@ -2,29 +2,19 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.header .nav {
-  position: relative;
-  right: -20px;
+  height: 30px;
 }
 
 .header__title {
   font-weight: 900;
   font-size: 24px;
   letter-spacing: -0.24px;
-  margin: 0;
   position: relative;
-  left: -20px;
 }
 
 .header__link {
   color: black;
   text-decoration: none;
-}
-
-.page_type_index .header__link {
-  gap: 32px;
 }
 
 .header__link:hover {
